@@ -45,7 +45,6 @@
         </style>
     </head>
     <body>
-        <label for="pw-1" id="label">Label</label>
         <h1>Password Check</h1>
         <form onsubmit="return false" id="pw-wrapper">
             <input type="password" name="" id="pw-1" />
@@ -54,6 +53,11 @@
         </form>
         <div class="checks">
             <p>Passwords are equal <span id="check-equal" class="check">❌</span></p>
+            <p>Passwords contain Lower Case <span id="check-lower-case" class="check">❌</span></p>
+            <p>
+                Passwords at least 10 characters long
+                <span id="check-length" class="check">❌</span>
+            </p>
         </div>
         <script src="script.js"></script>
     </body>

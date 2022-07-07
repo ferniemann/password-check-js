@@ -24,13 +24,35 @@ function checkIfPasswordsMatch() {
         check.innerText = "✅";
         return true;
     } else {
-        check.innerText = "❌";
         return false;
     }
 }
 
 function checkPasswords() {
     if (checkIfPasswordsMatch()) {
-        console.log("Läuft");
+        checkPasswordLowerCase();
+        checkPasswordLength();
+    } else {
+        const allChecks = document.querySelectorAll(".check");
+
+        for (let check of allChecks) {
+            check.innerText = "❌";
+        }
+    }
+}
+
+function checkPasswordLowerCase() {
+    const lowerCaseLetters = /[a-z]/;
+
+    if (pw1.value.match(lowerCaseLetters)) {
+        const check = document.querySelector("#check-lower-case");
+        check.innerText = "✅";
+    }
+}
+
+function checkPasswordLength() {
+    if (pw1.value.length > 9) {
+        const check = document.querySelector("#check-length");
+        check.innerText = "✅";
     }
 }
